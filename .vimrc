@@ -9,12 +9,16 @@ Plug 'scrooloose/nerdtree',{'on':'NERDTreeToggle'}
 
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+
 call plug#end()
 
 filetype plugin indent on
 syntax on
 
 set backspace=indent,eol,start
+set autoindent
 set ts=2
 set shiftwidth=2
 set number
@@ -53,6 +57,15 @@ if has('gui_running')
   set columns=140
 	set hlsearch
 end
+
+"folding
+set foldmethod=marker
+set foldclose=all
+set foldopen=insert
+
+" gpg
+let g:GPGPreferArmor=1
+let g:GPGPreferSign=1
 
 map <C-n> :NERDTreeToggle<CR>
 
